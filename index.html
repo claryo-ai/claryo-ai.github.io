@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Claryo Beta</title>
+    <meta
+      name="description"
+      content="Claryo: an engineer-focused UI for evaluating multi-agent systems — runs, findings, metrics, and policy/judge configuration."
+    />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <div class="orbs" aria-hidden="true">
+      <div class="orb orb--a"></div>
+      <div class="orb orb--b"></div>
+      <div class="orb orb--c"></div>
+      <div class="orb orb--d"></div>
+    </div>
+
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="Claryo beta home">
+          <img class="brand__mark" src="./assets/logo.png" alt="" />
+          <span class="brand__name">Claryo</span>
+          <span class="brand__tag">Beta</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Site">
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#demo">Product</a>
+          <a href="#team">Team</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="kicker">
+              Reliability infrastructure for <span class="grad">LLM applications</span>.
+            </p>
+            <h1>
+              CLARYO: <span class="nowrap">the AI reliability layer</span>
+            </h1>
+            <p class="sub">
+              Powered by explainability research to create safety and speed:
+              detect drift from your workflows, fix it with an LLM judge, and
+              iterate faster in a sandbox.
+            </p>
+
+            <div class="hero__meta">
+              <div class="pill">
+                <span class="pill__dot"></span>
+                Detect, fix, iterate — end to end
+              </div>
+              <div class="pill">
+                <span class="pill__dot pill__dot--alt"></span>
+                Motion that respects reduced motion
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__panel" role="presentation">
+            <div class="panel">
+              <div class="panel__top">
+                <div class="panel__lights">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="panel__title">Agent flow</div>
+              </div>
+              <div class="panel__body">
+                <div class="metric">
+                  <div class="metric__label">Agents in flow</div>
+                  <div class="metric__value">3</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">Judge evaluation</div>
+                  <div class="metric__value">On</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">Improvement</div>
+                  <div class="metric__value">+18%</div>
+                </div>
+
+                <div class="diagram" aria-label="Multi-agent interaction diagram with judge and metrics">
+                  <svg class="mini-graph" viewBox="0 0 680 220" role="img" aria-label="Agents interact, judge evaluates, metrics improve" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#6757F5" />
+                        <stop offset="0.5" stop-color="#CC7DB8" />
+                        <stop offset="1" stop-color="#F58C67" />
+                      </linearGradient>
+                      <linearGradient id="node" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="rgba(248,249,252,0.18)" />
+                        <stop offset="1" stop-color="rgba(248,249,252,0.04)" />
+                      </linearGradient>
+                      <marker id="arrow" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(248,249,252,0.7)"></path>
+                      </marker>
+                    </defs>
+
+                    <!-- message edges (arrow endpoints touch circle edges) -->
+                    <path id="p-a1a2" class="flow flow--a" d="M164 80 L229 80" fill="none" stroke="url(#edge)" stroke-width="2.6" stroke-linecap="butt" stroke-dasharray="7 11" marker-end="url(#arrow)" stroke-opacity="0.95"/>
+                    <path id="p-a2a3" class="flow flow--b" d="M284 80 L349 80" fill="none" stroke="url(#edge)" stroke-width="2.6" stroke-linecap="butt" stroke-dasharray="7 11" marker-end="url(#arrow)" stroke-opacity="0.95"/>
+                    <path id="p-a3j" class="flow flow--c" d="M404 80 C 436 84, 438 100, 443 110" fill="none" stroke="rgba(248,249,252,0.72)" stroke-width="2.4" stroke-linecap="butt" stroke-dasharray="7 11" marker-end="url(#arrow)"/>
+
+                    <!-- connections (like MASbility: human connected to agents) -->
+                    <path class="link" d="M241 152 L160 94" fill="none" stroke="rgba(248,249,252,0.32)" stroke-width="2" stroke-linecap="round"/>
+                    <path class="link" d="M280 152 L360 94" fill="none" stroke="rgba(248,249,252,0.32)" stroke-width="2" stroke-linecap="round"/>
+
+                    <!-- analysis edges: judge observes the connections -->
+                    <path id="p-ana1" class="analysis" d="M210 118 C 284 154, 358 164, 443 144" fill="none" stroke="rgba(61,26,239,0.68)" stroke-width="2.0" stroke-linecap="butt" stroke-dasharray="4 10" marker-end="url(#arrow)"/>
+                    <path id="p-ana2" class="analysis" d="M310 118 C 352 134, 390 146, 443 132" fill="none" stroke="rgba(245,140,103,0.68)" stroke-width="2.0" stroke-linecap="butt" stroke-dasharray="4 10" marker-end="url(#arrow)"/>
+
+                    <!-- moving packets along message + analysis flows -->
+                    <g class="packets" aria-hidden="true">
+                      <circle r="3.5" fill="rgba(248,249,252,0.75)">
+                        <animateMotion dur="2.2s" repeatCount="indefinite">
+                          <mpath href="#p-a1a2" xlink:href="#p-a1a2" />
+                        </animateMotion>
+                      </circle>
+                      <circle r="3" fill="rgba(248,249,252,0.55)">
+                        <animateMotion dur="2.7s" repeatCount="indefinite" begin="-1.2s">
+                          <mpath href="#p-a2a3" xlink:href="#p-a2a3" />
+                        </animateMotion>
+                      </circle>
+                      <circle r="3.5" fill="rgba(248,249,252,0.70)">
+                        <animateMotion dur="2.4s" repeatCount="indefinite" begin="-0.6s">
+                          <mpath href="#p-a3j" xlink:href="#p-a3j" />
+                        </animateMotion>
+                      </circle>
+                      <circle r="3.2" fill="rgba(61,26,239,0.85)">
+                        <animateMotion dur="2.8s" repeatCount="indefinite" begin="-0.2s">
+                          <mpath href="#p-ana1" xlink:href="#p-ana1" />
+                        </animateMotion>
+                      </circle>
+                      <circle r="3.2" fill="rgba(245,140,103,0.75)">
+                        <animateMotion dur="2.5s" repeatCount="indefinite" begin="-1.0s">
+                          <mpath href="#p-ana2" xlink:href="#p-ana2" />
+                        </animateMotion>
+                      </circle>
+                    </g>
+
+                    <!-- agents (styled like MASbility nodes) -->
+                    <g class="node node--agent">
+                      <circle cx="140" cy="80" r="24" fill="rgba(17,22,40,0.35)" stroke="rgba(248,249,252,0.22)" />
+                      <text x="140" y="85" text-anchor="middle" fill="rgba(248,249,252,0.86)" font-size="12.5" font-weight="700">A1</text>
+                    </g>
+                    <g class="node node--agent">
+                      <circle cx="260" cy="80" r="24" fill="rgba(17,22,40,0.35)" stroke="rgba(248,249,252,0.22)" />
+                      <text x="260" y="85" text-anchor="middle" fill="rgba(248,249,252,0.86)" font-size="12.5" font-weight="700">A2</text>
+                    </g>
+                    <g class="node node--agent">
+                      <circle cx="380" cy="80" r="24" fill="rgba(17,22,40,0.35)" stroke="rgba(248,249,252,0.22)" />
+                      <text x="380" y="85" text-anchor="middle" fill="rgba(248,249,252,0.86)" font-size="12.5" font-weight="800">A3</text>
+                    </g>
+
+                    <!-- human -->
+                    <g class="node node--human">
+                      <circle cx="260" cy="166" r="24" fill="rgba(17,22,40,0.35)" stroke="rgba(61,26,239,0.9)" stroke-width="2.4" />
+                      <circle cx="260" cy="166" r="30" fill="none" stroke="rgba(61,26,239,0.18)" stroke-width="10"/>
+                      <text x="260" y="170" text-anchor="middle" fill="rgba(248,249,252,0.88)" font-size="11.5" font-weight="750">human</text>
+                    </g>
+
+                    <!-- judge -->
+                    <g class="judge">
+                      <rect x="450" y="92" width="110" height="76" rx="18" fill="rgba(17,22,40,0.55)" stroke="rgba(248,249,252,0.16)"/>
+                      <circle cx="472" cy="130" r="9" fill="#3D1AEF" opacity="0.9"/>
+                      <text x="505" y="126" text-anchor="middle" fill="rgba(248,249,252,0.92)" font-size="13" font-weight="800">Judge</text>
+                      <text x="505" y="147" text-anchor="middle" fill="rgba(248,249,252,0.62)" font-size="11">analyses</text>
+                      <g class="judge__think" aria-hidden="true">
+                        <circle cx="492" cy="108" r="2.2" fill="rgba(248,249,252,0.7)">
+                          <animate attributeName="opacity" values="0.2;0.95;0.2" dur="1.2s" repeatCount="indefinite" begin="0s"/>
+                        </circle>
+                        <circle cx="506" cy="108" r="2.2" fill="rgba(248,249,252,0.7)">
+                          <animate attributeName="opacity" values="0.2;0.95;0.2" dur="1.2s" repeatCount="indefinite" begin="0.2s"/>
+                        </circle>
+                        <circle cx="520" cy="108" r="2.2" fill="rgba(248,249,252,0.7)">
+                          <animate attributeName="opacity" values="0.2;0.95;0.2" dur="1.2s" repeatCount="indefinite" begin="0.4s"/>
+                        </circle>
+                      </g>
+                    </g>
+
+                    <!-- metrics -->
+                    <g class="metrics">
+                      <text x="568" y="22" text-anchor="start" fill="rgba(248,249,252,0.68)" font-size="11">Trustfulness</text>
+                      <rect x="568" y="32" width="90" height="8" rx="4" fill="rgba(248,249,252,0.10)"/>
+                      <rect class="meter meter--1" x="568" y="32" width="68" height="8" rx="4" fill="url(#edge)"/>
+
+                      <text x="568" y="148" text-anchor="start" fill="rgba(248,249,252,0.68)" font-size="11">Alignment</text>
+                      <rect x="568" y="158" width="90" height="8" rx="4" fill="rgba(248,249,252,0.10)"/>
+                      <rect class="meter meter--2" x="568" y="158" width="60" height="8" rx="4" fill="url(#edge)"/>
+
+                      <text x="568" y="190" text-anchor="start" fill="rgba(248,249,252,0.68)" font-size="11">Calibration error</text>
+                      <rect x="568" y="200" width="90" height="8" rx="4" fill="rgba(248,249,252,0.10)"/>
+                      <rect class="meter meter--3" x="568" y="200" width="74" height="8" rx="4" fill="url(#edge)"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="callout">
+                  <div class="callout__title">Outcome</div>
+                  <div class="callout__text">
+                    Safer deployment: test, monitor, and iterate without losing
+                    workflow alignment.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>The problem</h2>
+            <p>
+              AI systems are hard to test, monitor, and deploy safely. Teams are
+              building fast — and reliability is the bottleneck.
+            </p>
+          </div>
+
+          <div class="stats">
+            <article class="stat">
+              <div class="stat__value">95%</div>
+              <div class="stat__label">of GenAI projects fail</div>
+              <div class="stat__source">MIT</div>
+            </article>
+            <article class="stat">
+              <div class="stat__value">15%</div>
+              <div class="stat__label">of companies deployed AI in production</div>
+              <div class="stat__source">S&amp;P</div>
+            </article>
+            <article class="stat">
+              <div class="stat__value">Hard</div>
+              <div class="stat__label">to test, monitor, and deploy safely</div>
+              <div class="stat__source">Discovery sessions</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="solution" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2>Claryo’s approach</h2>
+            <p>
+              A reliability layer that keeps agents aligned with your workflows,
+              and gives your team a repeatable loop to improve outcomes.
+            </p>
+          </div>
+
+          <ol class="steps">
+            <li class="step">
+              <div class="step__n">1</div>
+              <div class="step__body">
+                <div class="step__title">Detect drift</div>
+                <div class="step__text">
+                  Detect AI agents’ drift from your workflows using structured
+                  evaluation signals.
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__n">2</div>
+              <div class="step__body">
+                <div class="step__title">Fix with an LLM judge</div>
+                <div class="step__text">
+                  Fix drifts automatically with an LLM judge: consistent criteria
+                  and repeatable checks.
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__n">3</div>
+              <div class="step__body">
+                <div class="step__title">Iterate faster in a sandbox</div>
+                <div class="step__text">
+                  Iterate on new agent variations safely, with faster feedback
+                  loops and clearer comparisons.
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="demo" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>What the product shows</h2>
+            <p>
+              An engineer- and data-scientist-focused UI for evaluating
+              multi-agent systems: runs, findings, metrics, and policy/judge
+              configuration. Optionally, it can proxy to a FastAPI backend.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Runs</h3>
+              <p>
+                Review executions: inputs, tool calls, timing, and key events —
+                with reproducible metadata.
+              </p>
+              <ul>
+                <li>Searchable history</li>
+                <li>Trace-style timelines</li>
+                <li>Export-friendly context</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Findings</h3>
+              <p>
+                Track failures, near-misses, and “worked but risky” behavior with
+                evidence.
+              </p>
+              <ul>
+                <li>Structured notes</li>
+                <li>Severity &amp; tags</li>
+                <li>Linked to runs</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Policy &amp; judge configuration</h3>
+              <p>
+                Define evaluation criteria and keep it consistent while your
+                system evolves.
+              </p>
+              <ul>
+                <li>Readable presets</li>
+                <li>Judging knobs</li>
+                <li>Comparable experiments</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="section section--cta">
+        <div class="container">
+          <div class="section__head">
+            <h2>The team</h2>
+            <p>Built by operators and engineers who have shipped AI infrastructure in the real world.</p>
+          </div>
+
+          <div class="team">
+            <article class="person">
+              <div class="person__head">
+                <div class="person__avatar person__avatar--remy">
+                  <img class="person__photo" src="./assets/team-remy.jpg" alt="Rémy El Youssef" loading="lazy" />
+                </div>
+                <div class="person__meta">
+                  <div class="person__name">Rémy El Youssef</div>
+                  <div class="person__role">CEO</div>
+                </div>
+              </div>
+              <div class="person__bio">
+                Hospital Manager at a 200+ staff hospital, supporting digital transformation and operations.
+                Product &amp; strategy roles across AI, fintech and healthtech (Cleo AI, Qubit/Coveo).
+              </div>
+            </article>
+
+            <article class="person">
+              <div class="person__head">
+                <div class="person__avatar">
+                  <img class="person__photo" src="./assets/team-jaune.png" alt="Jaunė Malūkaitė" loading="lazy" />
+                </div>
+                <div class="person__meta">
+                  <div class="person__name">Jaunė Malūkaitė</div>
+                  <div class="person__role">CTO</div>
+                </div>
+              </div>
+              <div class="person__bio">
+                AI/ML Engineer at CommonAI, building AI infrastructure and systems.
+                Cambridge MPhil (Distinction); ex-IBM Data Scientist working on LLMs and ML systems.
+              </div>
+            </article>
+          </div>
+
+          <div class="cta cta--mini">
+            <div class="cta__copy">
+              <h2>Want a guided walkthrough?</h2>
+              <p>We can tailor the walkthrough to your use case and success criteria.</p>
+            </div>
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="#top">Back to top</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img src="./assets/logo.png" alt="" />
+          <div>
+            <div class="footer__name">Claryo</div>
+            <div class="footer__sub">Multi-agent evaluation UI</div>
+          </div>
+        </div>
+        <div class="footer__note">
+          © <span id="year"></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
