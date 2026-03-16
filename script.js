@@ -110,3 +110,84 @@ if (!prefersReducedMotion) {
   }
 }
 
+function setupContactModal() {
+  const openBtn = document.getElementById("talk-to-founders");
+  const modal = document.getElementById("contact-modal");
+  const form = document.getElementById("contact-form");
+
+  if (!openBtn || !modal || !form) return;
+
+  let lastFocus = null;
+
+  function setOpen(nextOpen) {
+    if (nextOpen) {
+      lastFocus = document.activeElement;
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      const first = modal.querySelector("input, textarea, button");
+      if (first && typeof first.focus === "function") first.focus();
+    } else {
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      lastFocus = null;
+    }
+  }
+
+  function closeIfRequested(target) {
+    if (!target) return;
+    const el = target.closest?.("[data-close='true']");
+    if (el) setOpen(false);
+  }
+
+  openBtn.addEventListener("click", () => setOpen(true));
+
+  modal.addEventListener("click", (e) => {
+    closeIfRequested(e.target);
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (modal.hidden) return;
+    if (e.key === "Escape") setOpen(false);
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const toRaw = (
+      openBtn.getAttribute("data-to") ||
+      "elyoussefremy@gmail.com, jaune.malukaite@gmail.com"
+    ).trim();
+    const to = toRaw
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .join(",");
+    const data = new FormData(form);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    const subject = "Claryo — Talk to the founders";
+    const lines = [
+      message || "(no message provided)",
+      "",
+      "---",
+      name ? `Name: ${name}` : null,
+      email ? `Email: ${email}` : null,
+    ].filter(Boolean);
+
+    const body = lines.join("\n");
+    const href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = href;
+    setOpen(false);
+    form.reset();
+  });
+}
+
+setupContactModal();

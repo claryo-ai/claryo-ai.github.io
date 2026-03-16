@@ -62,7 +62,7 @@
               </div>
               <div class="pill">
                 <span class="pill__dot pill__dot--alt"></span>
-                Motion that respects reduced motion
+                Get metric insights
               </div>
             </div>
           </div>
@@ -394,12 +394,59 @@
               <p>We can tailor the walkthrough to your use case and success criteria.</p>
             </div>
             <div class="cta__actions">
-              <a class="btn btn--primary" href="#top">Back to top</a>
+              <button
+                class="btn btn--primary"
+                type="button"
+                id="talk-to-founders"
+                data-to="elyoussefremy@gmail.com, jaune.malukaite@gmail.com"
+              >
+                Talk to the founders
+              </button>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <div class="modal" id="contact-modal" hidden aria-hidden="true">
+      <div class="modal__overlay" data-close="true"></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+        <div class="modal__head">
+          <div>
+            <div class="modal__kicker">Contact</div>
+            <h3 class="modal__title" id="contact-title">Talk to the founders</h3>
+          </div>
+          <button class="modal__close" type="button" aria-label="Close" data-close="true">✕</button>
+        </div>
+
+        <form class="form" id="contact-form">
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Name</span>
+              <input class="field__input" name="name" autocomplete="name" placeholder="Your name" />
+            </label>
+            <label class="field">
+              <span class="field__label">Email</span>
+              <input class="field__input" name="email" type="email" autocomplete="email" placeholder="you@company.com" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Message</span>
+            <textarea class="field__input field__input--area" name="message" rows="5" placeholder="What would you like to discuss?"></textarea>
+          </label>
+
+          <div class="form__actions">
+            <button class="btn btn--secondary" type="button" data-close="true">Cancel</button>
+            <button class="btn btn--primary" type="submit">Open email</button>
+          </div>
+
+          <p class="form__note">
+            This opens your email client with a pre-filled message.
+          </p>
+        </form>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container footer__inner">
