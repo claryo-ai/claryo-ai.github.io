@@ -314,6 +314,7 @@ h1 {
   font-weight: 600;
   font-size: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 

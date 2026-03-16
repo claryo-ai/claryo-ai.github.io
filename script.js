@@ -144,7 +144,10 @@ function setupContactModal() {
     if (el) setOpen(false);
   }
 
-  openBtn.addEventListener("click", () => setOpen(true));
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    setOpen(true);
+  });
 
   modal.addEventListener("click", (e) => {
     closeIfRequested(e.target);
