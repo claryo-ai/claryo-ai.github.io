@@ -624,8 +624,8 @@ h1 {
   position: relative;
   z-index: 2;
   padding: 64px 0;
-  min-height: calc(100vh - var(--nav-h));
-  min-height: calc(100svh - var(--nav-h));
+  min-height: calc((100vh - var(--nav-h)) / 2);
+  min-height: calc((100svh - var(--nav-h)) / 2);
 }
 
 section[id] {
