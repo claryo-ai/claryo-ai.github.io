@@ -8,6 +8,7 @@
   --stroke: rgba(248, 249, 252, 0.12);
   --stroke2: rgba(248, 249, 252, 0.18);
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --nav-h: 70px;
 
   --g1: #6757f5;
   --g2: #a56ed9;
@@ -247,6 +248,8 @@ canvas#bg {
   position: relative;
   z-index: 2;
   padding: 72px 0 26px;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
 }
 
 .hero__grid {
@@ -287,7 +290,7 @@ h1 {
 }
 
 .sub {
-  margin: 0;
+  margin: clamp(14px, 2.8vh, 34px) 0 0;
   color: rgba(248, 249, 252, 0.78);
   font-size: 16px;
   max-width: 62ch;
@@ -621,6 +624,12 @@ h1 {
   position: relative;
   z-index: 2;
   padding: 64px 0;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-h) + 18px);
 }
 
 .section--alt {
