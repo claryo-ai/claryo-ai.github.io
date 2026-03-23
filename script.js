@@ -111,13 +111,16 @@ if (!prefersReducedMotion) {
 }
 
 function setupContactModal() {
-  const openBtn = document.getElementById("talk-to-founders");
+  const triggers = Array.from(
+    document.querySelectorAll("[data-contact-open='true'], [data-contact-open='1'], [data-contact-open]")
+  );
   const modal = document.getElementById("contact-modal");
   const form = document.getElementById("contact-form");
 
-  if (!openBtn || !modal || !form) return;
+  if (!triggers.length || !modal || !form) return;
 
   let lastFocus = null;
+  let activeTrigger = triggers[0];
 
   function setOpen(nextOpen) {
     if (nextOpen) {
@@ -144,10 +147,13 @@ function setupContactModal() {
     if (el) setOpen(false);
   }
 
-  openBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    setOpen(true);
-  });
+  for (const trigger of triggers) {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      activeTrigger = trigger;
+      setOpen(true);
+    });
+  }
 
   modal.addEventListener("click", (e) => {
     closeIfRequested(e.target);
@@ -162,7 +168,8 @@ function setupContactModal() {
     e.preventDefault();
 
     const toRaw = (
-      openBtn.getAttribute("data-to") ||
+      activeTrigger?.getAttribute("data-to") ||
+      triggers[0]?.getAttribute("data-to") ||
       "elyoussefremy@gmail.com, jaune.malukaite@gmail.com"
     ).trim();
     const to = toRaw

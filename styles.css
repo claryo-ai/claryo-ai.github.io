@@ -19,6 +19,9 @@
 
   --radius: 18px;
   --radius2: 26px;
+
+  /* Match the top nav pill width to the hero schema (right column) width. */
+  --hero-panel-w: clamp(420px, 48%, 680px);
 }
 
 * {
@@ -167,7 +170,7 @@ canvas#bg {
 }
 
 .container {
-  width: min(1120px, calc(100% - 48px));
+  width: min(1240px, calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -218,11 +221,13 @@ canvas#bg {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 12px;
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(17, 22, 40, 0.35);
   border: 1px solid rgba(248, 249, 252, 0.08);
+  width: var(--hero-panel-w);
 }
 
 .nav__links a {
@@ -254,7 +259,7 @@ canvas#bg {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr var(--hero-panel-w);
   gap: 34px;
   align-items: start;
 }
@@ -287,6 +292,7 @@ h1 {
   font-size: clamp(36px, 4.1vw, 54px);
   line-height: 1.05;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .sub {
@@ -301,6 +307,16 @@ h1 {
   gap: 12px;
   margin-top: 22px;
   flex-wrap: wrap;
+}
+
+.hero__bullets {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: rgba(248, 249, 252, 0.78);
+}
+
+.hero__bullets li {
+  margin: 6px 0;
 }
 
 .btn {
@@ -388,6 +404,7 @@ h1 {
 }
 
 .panel {
+  width: 100%;
   border-radius: var(--radius2);
   background: linear-gradient(180deg, rgba(248, 249, 252, 0.06), rgba(248, 249, 252, 0.03));
   border: 1px solid rgba(248, 249, 252, 0.12);
@@ -808,6 +825,16 @@ section[id] {
 .glass p {
   margin: 0;
   color: rgba(248, 249, 252, 0.74);
+}
+
+.glass ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(248, 249, 252, 0.78);
+}
+
+.glass li {
+  margin: 6px 0;
 }
 
 .section--cta {

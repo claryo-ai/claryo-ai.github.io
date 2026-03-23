@@ -23,7 +23,7 @@
     </div>
 
     <header class="nav">
-      <div class="nav__inner">
+      <div class="container nav__inner">
         <a class="brand" href="#top" aria-label="Claryo beta home">
           <img class="brand__mark" src="./assets/logo.png" alt="" />
           <span class="brand__name">Claryo</span>
@@ -32,8 +32,10 @@
 
         <nav class="nav__links" aria-label="Site">
           <a href="#problem">Problem</a>
-          <a href="#solution">Solution</a>
+          <a href="#solution">How it works</a>
+          <a href="#who">Who it&rsquo;s for</a>
           <a href="#demo">Product</a>
+          <a href="#use-cases">Use cases</a>
           <a href="#team">Team</a>
         </nav>
       </div>
@@ -44,26 +46,29 @@
         <div class="container hero__grid">
           <div class="hero__copy">
             <p class="kicker">
-              Reliability infrastructure for <span class="grad">LLM applications</span>.
+              For teams deploying AI agents and <span class="grad">LLM workflows</span>
             </p>
-            <h1>
-              CLARYO: <span class="nowrap">the AI reliability layer</span>
-            </h1>
+            <h1>Catch broken AI behavior before <span class="nowrap">your users do</span></h1>
             <p class="sub">
-              Powered by explainability research to create safety and speed:
-              detect drift from your workflows, fix it with an LLM judge, and
-              iterate faster in a sandbox.
+              Test, monitor, and improve LLM features — without manual QA or waiting for user complaints.
             </p>
 
-            <div class="hero__meta">
-              <div class="pill">
-                <span class="pill__dot"></span>
-                Detect, fix, iterate — end to end
-              </div>
-              <div class="pill">
-                <span class="pill__dot pill__dot--alt"></span>
-                Get metric insights
-              </div>
+            <ul class="hero__bullets">
+              <li>Detect behavior changes after prompt or model updates</li>
+              <li>Surface failures, hallucinations, and risky outputs in production</li>
+              <li>Reduce manual review and debugging time</li>
+            </ul>
+
+            <div class="hero__cta">
+              <a
+                class="btn btn--primary"
+                href="mailto:elyoussefremy@gmail.com,jaune.malukaite@gmail.com"
+                data-contact-open="true"
+                data-to="elyoussefremy@gmail.com,jaune.malukaite@gmail.com"
+              >
+                Talk to the founders
+              </a>
+              <a class="btn btn--secondary" href="#solution">See how it works</a>
             </div>
           </div>
 
@@ -221,29 +226,32 @@
       <section id="problem" class="section">
         <div class="container">
           <div class="section__head">
-            <h2>The problem</h2>
+            <h2>Shipping AI today is still manual and reactive</h2>
             <p>
-              AI systems are hard to test, monitor, and deploy safely. Teams are
-              building fast — and reliability is the bottleneck.
+              Teams are deploying AI agents and copilots faster than ever — but reliability hasn&rsquo;t caught up.
             </p>
           </div>
 
-          <div class="stats">
-            <article class="stat">
-              <div class="stat__value">95%</div>
-              <div class="stat__label">of GenAI projects fail</div>
-              <div class="stat__source">MIT</div>
-            </article>
-            <article class="stat">
-              <div class="stat__value">15%</div>
-              <div class="stat__label">of companies deployed AI in production</div>
-              <div class="stat__source">S&amp;P</div>
-            </article>
-            <article class="stat">
-              <div class="stat__value">Hard</div>
-              <div class="stat__label">to test, monitor, and deploy safely</div>
-              <div class="stat__source">Discovery sessions</div>
-            </article>
+          <div class="grid2">
+            <div class="glass">
+              <h3>Today, most teams rely on:</h3>
+              <ul>
+                <li>Hand-crafted prompt testing</li>
+                <li>Manual review of conversations</li>
+                <li>Random QA sampling</li>
+                <li>User complaints to detect failures</li>
+              </ul>
+            </div>
+
+            <div class="glass">
+              <h3>When prompts or models change</h3>
+              <p>
+                Teams don&rsquo;t know what behavior changed — until something breaks in production.
+              </p>
+              <p>
+                AI systems evolve quickly, but most teams lack a clear way to detect regressions and track failures over time.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -251,10 +259,9 @@
       <section id="solution" class="section section--alt">
         <div class="container">
           <div class="section__head">
-            <h2>Claryo’s approach</h2>
+            <h2>Understand and improve AI behavior across the lifecycle</h2>
             <p>
-              A reliability layer that keeps agents aligned with your workflows,
-              and gives your team a repeatable loop to improve outcomes.
+              Claryo helps teams detect, evaluate, and improve AI behavior as their systems evolve.
             </p>
           </div>
 
@@ -262,30 +269,27 @@
             <li class="step">
               <div class="step__n">1</div>
               <div class="step__body">
-                <div class="step__title">Detect drift</div>
+                <div class="step__title">Detect behavior changes</div>
                 <div class="step__text">
-                  Detect AI agents’ drift from your workflows using structured
-                  evaluation signals.
+                  Automatically identify when prompt updates, model upgrades, or workflow changes alter how your AI behaves. Catch regressions, new failure modes, and unexpected outputs early — before they reach users.
                 </div>
               </div>
             </li>
             <li class="step">
               <div class="step__n">2</div>
               <div class="step__body">
-                <div class="step__title">Fix with an LLM judge</div>
+                <div class="step__title">Evaluate failures consistently</div>
                 <div class="step__text">
-                  Fix drifts automatically with an LLM judge: consistent criteria
-                  and repeatable checks.
+                  Define evaluation rules to analyze AI outputs consistently. Surface hallucinations, unsafe responses, escalation errors, and edge cases — without manual ticket review.
                 </div>
               </div>
             </li>
             <li class="step">
               <div class="step__n">3</div>
               <div class="step__body">
-                <div class="step__title">Iterate faster in a sandbox</div>
+                <div class="step__title">Iterate and improve safely</div>
                 <div class="step__text">
-                  Iterate on new agent variations safely, with faster feedback
-                  loops and clearer comparisons.
+                  Compare versions, test new changes, and understand how behavior evolves over time. Ship improvements with confidence — not guesswork.
                 </div>
               </div>
             </li>
@@ -293,65 +297,111 @@
         </div>
       </section>
 
-      <section id="demo" class="section">
+      <section id="who" class="section">
         <div class="container">
           <div class="section__head">
-            <h2>What the product shows</h2>
-            <p>
-              An engineer- and data-scientist-focused UI for evaluating
-              multi-agent systems: runs, findings, metrics, and policy/judge
-              configuration. Optionally, it can proxy to a FastAPI backend.
-            </p>
+            <h2>Built for teams deploying AI systems</h2>
           </div>
 
-          <div class="cards">
+          <div class="grid2">
             <article class="card">
-              <h3>Runs</h3>
-              <p>
-                Review executions: inputs, tool calls, timing, and key events —
-                with reproducible metadata.
-              </p>
+              <h3>AI product teams</h3>
+              <p>Teams shipping LLM-powered features like copilots, assistants, and AI workflows.</p>
+              <p>Typical users include:</p>
               <ul>
-                <li>Searchable history</li>
-                <li>Trace-style timelines</li>
-                <li>Export-friendly context</li>
+                <li>AI Product Managers</li>
+                <li>Applied ML Engineers</li>
+                <li>AI Engineering Leads</li>
               </ul>
+              <p>These teams need to move fast — without breaking behavior when prompts or models change.</p>
             </article>
 
             <article class="card">
-              <h3>Findings</h3>
-              <p>
-                Track failures, near-misses, and “worked but risky” behavior with
-                evidence.
-              </p>
+              <h3>Operations teams running AI agents</h3>
+              <p>Teams deploying AI to automate support or operational workflows.</p>
+              <p>Typical users include:</p>
               <ul>
-                <li>Structured notes</li>
-                <li>Severity &amp; tags</li>
-                <li>Linked to runs</li>
+                <li>Head of Support Operations</li>
+                <li>CX Automation Leads</li>
+                <li>AI Bot Managers</li>
               </ul>
-            </article>
-
-            <article class="card">
-              <h3>Policy &amp; judge configuration</h3>
-              <p>
-                Define evaluation criteria and keep it consistent while your
-                system evolves.
-              </p>
-              <ul>
-                <li>Readable presets</li>
-                <li>Judging knobs</li>
-                <li>Comparable experiments</li>
-              </ul>
+              <p>These teams need to detect failures early and reduce manual QA before customers feel the impact.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="team" class="section section--cta">
+      <section id="demo" class="section">
         <div class="container">
           <div class="section__head">
-            <h2>The team</h2>
-            <p>Built by operators and engineers who have shipped AI infrastructure in the real world.</p>
+            <h2>See how your AI actually behaves — not just how you think it behaves</h2>
+            <p>
+              Claryo gives you a structured view of how your AI behaves — across prompts, tools, and outputs.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Execution runs</h3>
+              <p>
+                Trace how agents and workflows respond to inputs across prompts, tools, and model interactions. See exactly what happened — and where behavior diverged.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Failure analysis</h3>
+              <p>
+                Identify hallucinations, risky outputs, escalation mistakes, and emerging failure patterns. Cluster similar failures to uncover systemic issues.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Evaluation rules</h3>
+              <p>
+                Define structured evaluation logic to judge AI outputs consistently. Track regressions and performance changes across versions of your workflows.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-cases" class="section section--alt">
+        <div class="container">
+          <div class="section__head">
+            <h2>Where teams use Claryo</h2>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3>AI copilots</h3>
+              <p>
+                Monitor assistant behavior as prompts and models evolve. Detect regressions and unexpected responses before users encounter them.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>AI support agents</h3>
+              <p>
+                Detect hallucinations, incorrect answers, and escalation failures across customer conversations. Reduce manual QA and improve automation safely.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>LLM workflows</h3>
+              <p>
+                Understand how complex multi-step workflows behave over time. Detect new failure patterns as your systems evolve.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>Built by engineers and operators working on AI systems</h2>
+            <p>We&rsquo;re building Claryo because teams deploying AI today lack the tools to understand and improve behavior reliably.</p>
+            <p>Our goal is to make it easier to ship AI systems that evolve safely as models, prompts, and workflows change.</p>
           </div>
 
           <div class="team">
@@ -387,17 +437,24 @@
               </div>
             </article>
           </div>
+        </div>
+      </section>
 
-          <div class="cta cta--mini">
+      <section id="contact" class="section section--cta">
+        <div class="container">
+          <div class="cta">
             <div class="cta__copy">
-              <h2>Want a guided walkthrough?</h2>
-              <p>We can tailor the walkthrough to your use case and success criteria.</p>
+              <h2>Talk to us</h2>
+              <p>
+                If you&rsquo;re running AI in production and dealing with manual QA, unexpected failures, or behavior changes after updates — we&rsquo;d love to understand your workflow.
+              </p>
             </div>
             <div class="cta__actions">
               <a
                 class="btn btn--primary"
                 id="talk-to-founders"
                 href="mailto:elyoussefremy@gmail.com,jaune.malukaite@gmail.com"
+                data-contact-open="true"
                 data-to="elyoussefremy@gmail.com,jaune.malukaite@gmail.com"
               >
                 Talk to the founders
