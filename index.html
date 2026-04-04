@@ -308,45 +308,84 @@
           <div class="section__head">
             <h2>A reliability layer for agents in production</h2>
             <p>
-              Inspired by modern agent platforms: a single place to monitor, evaluate, and improve behavior across
-              prompts, models, and workflows.
+              One place to monitor, evaluate, and compare agent behavior across prompts, models, and workflows.
             </p>
           </div>
 
-          <div class="platform">
-            <div class="platform__stack" aria-label="Platform layers">
-              <article class="layer">
-                <div class="layer__title">Monitoring</div>
-                <div class="layer__text">Track behavior changes and failures across releases and real traffic.</div>
-              </article>
-              <article class="layer">
-                <div class="layer__title">Evaluation</div>
-                <div class="layer__text">Apply consistent rules to surface hallucinations, unsafe responses, and edge cases.</div>
-              </article>
-              <article class="layer">
-                <div class="layer__title">Comparison</div>
-                <div class="layer__text">Compare versions to understand what changed and ship improvements confidently.</div>
-              </article>
-              <article class="layer">
-                <div class="layer__title">Governance</div>
-                <div class="layer__text">Document decisions and outcomes with a clear trail for debugging and review.</div>
-              </article>
+          <div class="platform platform--visual">
+            <div class="platform__copy" aria-label="Platform overview">
+              <div class="feature-list">
+                <article class="feature">
+                  <div class="feature__icon" aria-hidden="true">◎</div>
+                  <div class="feature__body">
+                    <div class="feature__title">Monitor</div>
+                    <div class="feature__text">Detect changes and failures across releases and real traffic.</div>
+                  </div>
+                </article>
+
+                <article class="feature">
+                  <div class="feature__icon" aria-hidden="true">✦</div>
+                  <div class="feature__body">
+                    <div class="feature__title">Evaluate</div>
+                    <div class="feature__text">Apply consistent rules for hallucinations, safety, and edge cases.</div>
+                  </div>
+                </article>
+
+                <article class="feature">
+                  <div class="feature__icon" aria-hidden="true">⇄</div>
+                  <div class="feature__body">
+                    <div class="feature__title">Compare</div>
+                    <div class="feature__text">See what changed between versions and ship with confidence.</div>
+                  </div>
+                </article>
+              </div>
             </div>
 
-            <aside class="platform__aside">
-              <div class="glass">
-                <h3>Designed for fast iteration</h3>
-                <p>
-                  Prompt and model changes ship daily. Claryo helps you understand impact quickly and reduce manual QA.
-                </p>
+            <div class="platform__visual" aria-label="Claryo visual example">
+              <div class="preview" role="img" aria-label="Claryo product preview with runs, evaluations, and comparisons">
+                <div class="preview__top">
+                  <div class="preview__lights" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <div class="preview__title">Claryo</div>
+                  <div class="preview__badge">Beta</div>
+                </div>
+
+                <div class="preview__tabs" aria-hidden="true">
+                  <span class="ptab ptab--active">Runs</span>
+                  <span class="ptab">Findings</span>
+                  <span class="ptab">Compare</span>
+                </div>
+
+                <div class="preview__body">
+                  <div class="preview__grid">
+                    <div class="p-card p-card--wide">
+                      <div class="p-card__k">Regression alert</div>
+                      <div class="p-card__v"><span class="grad">+18%</span> drift</div>
+                      <div class="p-card__s">New failure cluster after model upgrade</div>
+                      <div class="ribbons" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                      </div>
+                    </div>
+
+                    <div class="p-card">
+                      <div class="p-card__k">Safety</div>
+                      <div class="p-card__v">0.92</div>
+                      <div class="p-pill">Policy enabled</div>
+                    </div>
+
+                    <div class="p-card">
+                      <div class="p-card__k">Coverage</div>
+                      <div class="p-card__v">143</div>
+                      <div class="p-card__s">Scenarios evaluated</div>
+                    </div>
+                  </div>
+
+                  <div class="preview__foot">
+                    <span class="p-dot" aria-hidden="true"></span>
+                    v2 vs v3 • 1 judge • 12 tools
+                  </div>
+                </div>
               </div>
-              <div class="glass">
-                <h3>Built for real workflows</h3>
-                <p>
-                  Copilots, support agents, and multi-step automations: see how behavior evolves over time.
-                </p>
-              </div>
-            </aside>
+            </div>
           </div>
 
           <div class="cta cta--mini" aria-label="Get in touch call to action">
