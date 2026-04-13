@@ -1624,3 +1624,17 @@ section[id] {
 .person {
   text-align: center;
 }
+
+.person__avatar,
+.person__avatar--remy {
+  width: 120px;
+  height: 120px;
+}
+
+.person__meta {
+  gap: 8px;
+}
+
+.linkedin-btn {
+  margin-top: 10px;
+}
